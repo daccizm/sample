@@ -1,8 +1,18 @@
 <h1>Sample003</h1>
 
+<p><%= @auth_token %></p>
+<p><%= @csrf_token %></p>
+
 <h2>ユーザ認証</h2>
 <%= link_to 'sign_in',  sample003_sign_in_path %>
 <%= link_to 'sign_out', sample003_sign_out_path %>
 
 <h2>画像</h2>
-<%= link_to 'アップロード', sample003_upload_path %>
+<p>アップロード</p>
+<%= form_for @sample003_api_update, url: sample003_upload_path, html: {method: :post} do |f| %>
+  <%= f.file_field :file %>
+  <%= f.text_field :num_of_images %>
+  <%= f.text_field :upid %>
+  <%= f.text_field :description %>
+  <%= f.submit 'upload' %>
+<% end %>

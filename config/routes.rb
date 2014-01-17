@@ -5,7 +5,7 @@ Sample::Application.routes.draw do
   get "sample003/sign_in"
   get "sample003/sign_out"
 
-  get "sample003/upload"
+  post "sample003/upload"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
