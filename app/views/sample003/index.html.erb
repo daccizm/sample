@@ -16,3 +16,9 @@
   <%= f.text_field :description %>
   <%= f.submit 'upload' %>
 <% end %>
+
+<p>検索</p>
+<%= form_for @sample003_api_search, url: sample003_search_path, html: {method: :get} do |f| %>
+  <%= f.text_field :upid %>
+  <%= f.submit 'search' %>
+<% end %>
